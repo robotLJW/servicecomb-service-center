@@ -136,6 +136,6 @@ func TestFromContext(t *testing.T) {
 }
 
 func TestRemandQuota(t *testing.T) {
-	serviceUtil.RemandServiceQuota(context.Background())
-	serviceUtil.RemandInstanceQuota(context.Background())
+	datasource.RemandServiceQuota(context.Background())
+	datasource.RemandInstanceQuota(context.Background())
 }

@@ -15,19 +15,36 @@
  * limitations under the License.
  */
 
-package event
+package util
 
 import (
-	"github.com/apache/servicecomb-service-center/datasource/mongo/sd"
+	"context"
+
+	"go.mongodb.org/mongo-driver/bson"
+
+	"github.com/apache/servicecomb-service-center/datasource/mongo/client"
+	"github.com/apache/servicecomb-service-center/datasource/mongo/db"
 	"github.com/apache/servicecomb-service-center/pkg/log"
 )
 
-func init() {
-	log.Info("event init")
-	//instanceEventHandler := NewInstanceEventHandler()
-	//sd.EventProxy(instanceEventHandler.Type()).AddHandleFunc(instanceEventHandler.OnEvent)
-}
-
-func Initialize() {
-	sd.AddEventHandler(NewServiceEventHandler())
+func GetTags(ctx context.Context, domain string, project string, serviceID string) (tags map[string]string, err error) {
+	filter := bson.M{
+		db.ColumnDomain:  domain,
+		db.ColumnProject: project,
+		StringBuilder([]string{db.ColumnService, db.ColumnServiceID}): serviceID,
+	}
+	result, err := client.GetMongoClient().FindOne(ctx, db.CollectionService, filter)
+	if err != nil {
+		return nil, err
+	}
+	if result.Err() != nil {
+		return nil, result.Err()
+	}
+	var service db.Service
+	err = result.Decode(&service)
+	if err != nil {
+		log.Error("type conversion error", err)
+		return nil, err
+	}
+	return service.Tags, nil
 }

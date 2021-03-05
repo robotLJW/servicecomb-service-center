@@ -22,6 +22,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/apache/servicecomb-service-center/datasource"
 	"github.com/apache/servicecomb-service-center/datasource/etcd/cache"
 	"github.com/apache/servicecomb-service-center/datasource/etcd/kv"
 	"github.com/apache/servicecomb-service-center/datasource/etcd/path"
@@ -84,7 +85,7 @@ func (h *InstanceEventHandler) OnEvent(evt sd.KvEvent) {
 		metrics.ReportInstances(domainName, count)
 		if !core.IsDefaultDomainProject(domainProject) {
 			projectName := domainProject[idx+1:]
-			serviceUtil.RemandInstanceQuota(
+			datasource.RemandInstanceQuota(
 				util.SetDomainProject(context.Background(), domainName, projectName))
 		}
 	}

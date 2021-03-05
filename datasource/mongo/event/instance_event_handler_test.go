@@ -21,6 +21,7 @@ package event
 
 import (
 	"bou.ke/monkey"
+	"github.com/apache/servicecomb-service-center/datasource/mongo/db"
 	"reflect"
 	"testing"
 
@@ -85,7 +86,7 @@ func mongoAssign() sd.MongoEvent {
 		ServiceId:  "2a20507274fc71c925d138341517dce14b600744",
 		Endpoints:  endPoints,
 	}
-	mongoInstance := sd.Instance{}
+	mongoInstance := db.Instance{}
 	mongoInstance.Instance = &instance
 	mongoInstance.Domain = "default"
 	mongoInstance.Project = "default"
@@ -105,7 +106,7 @@ func mongoEventWronServiceId() sd.MongoEvent {
 		ServiceId:  "2a20507274fc71c925d138341517dce14b6007443333",
 		Endpoints:  endPoints,
 	}
-	mongoInstance := sd.Instance{}
+	mongoInstance := db.Instance{}
 	mongoInstance.Instance = &instance
 	mongoInstance.Domain = "default"
 	mongoInstance.Project = "default"

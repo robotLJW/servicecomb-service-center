@@ -19,12 +19,13 @@ package mongo
 
 import (
 	"context"
+	"github.com/apache/servicecomb-service-center/datasource/mongo/db"
 
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/go-chassis/cari/discovery"
 )
 
-func Filter(ctx context.Context, rules []*Rule, consumerID string) (bool, error) {
+func Filter(ctx context.Context, rules []*db.Rule, consumerID string) (bool, error) {
 	consumer, err := GetServiceByID(ctx, consumerID)
 	if consumer == nil {
 		return false, err
@@ -50,7 +51,7 @@ func Filter(ctx context.Context, rules []*Rule, consumerID string) (bool, error)
 	return true, nil
 }
 
-func FilterAll(ctx context.Context, consumerIDs []string, rules []*Rule) (allow []string, deny []string, err error) {
+func FilterAll(ctx context.Context, consumerIDs []string, rules []*db.Rule) (allow []string, deny []string, err error) {
 	l := len(consumerIDs)
 	if l == 0 || len(rules) == 0 {
 		return consumerIDs, nil, nil

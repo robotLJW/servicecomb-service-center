@@ -172,7 +172,16 @@ tracing:
       rate:
 
 quota:
-  kind:
+  service:
+    limit: 50000
+  instance:
+    limit: 150000
+  schema:
+    limit: 100
+  tag:
+    limit: 100
+  rule:
+    limit: 100
 
 
 syncer:

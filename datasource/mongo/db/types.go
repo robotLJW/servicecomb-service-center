@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package mongo
+package db
 
 import (
 	"time"
@@ -79,6 +79,7 @@ const (
 	ColumnRefreshTime         = "refresh_time"
 )
 
+
 type Service struct {
 	Domain  string            `json:"domain,omitempty"`
 	Project string            `json:"project,omitempty"`
@@ -86,13 +87,11 @@ type Service struct {
 	Service *pb.MicroService  `json:"service,omitempty"`
 }
 
-type Schema struct {
-	Domain        string `json:"domain,omitempty"`
-	Project       string `json:"project,omitempty"`
-	ServiceID     string `json:"serviceID,omitempty" bson:"service_id"`
-	SchemaID      string `json:"schemaID,omitempty" bson:"schema_id"`
-	Schema        string `json:"schema,omitempty"`
-	SchemaSummary string `json:"schemaSummary,omitempty" bson:"schema_summary"`
+type Instance struct {
+	Domain      string                   `json:"domain,omitempty"`
+	Project     string                   `json:"project,omitempty"`
+	RefreshTime time.Time                `json:"refreshTime,omitempty" bson:"refresh_time"`
+	Instance    *pb.MicroServiceInstance `json:"instance,omitempty"`
 }
 
 type Rule struct {
@@ -102,11 +101,13 @@ type Rule struct {
 	Rule      *pb.ServiceRule `json:"rule,omitempty"`
 }
 
-type Instance struct {
-	Domain      string                   `json:"domain,omitempty"`
-	Project     string                   `json:"project,omitempty"`
-	RefreshTime time.Time                `json:"refreshTime,omitempty" bson:"refresh_time"`
-	Instance    *pb.MicroServiceInstance `json:"instance,omitempty"`
+type Schema struct {
+	Domain        string `json:"domain,omitempty"`
+	Project       string `json:"project,omitempty"`
+	ServiceID     string `json:"serviceID,omitempty" bson:"service_id"`
+	SchemaID      string `json:"schemaID,omitempty" bson:"schema_id"`
+	Schema        string `json:"schema,omitempty"`
+	SchemaSummary string `json:"schemaSummary,omitempty" bson:"schema_summary"`
 }
 
 type ConsumerDep struct {
@@ -126,6 +127,6 @@ type DependencyRule struct {
 }
 
 type DelDepCacheKey struct {
-	key  *pb.MicroServiceKey
+	Key  *pb.MicroServiceKey
 	Type string
 }

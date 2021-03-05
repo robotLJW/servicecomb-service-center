@@ -15,11 +15,13 @@
  * limitations under the License.
  */
 
-package mongo
+package util
 
 import (
 	"context"
 	"fmt"
+	"github.com/apache/servicecomb-service-center/datasource/mongo/client"
+	"go.mongodb.org/mongo-driver/bson"
 
 	pb "github.com/go-chassis/cari/discovery"
 
@@ -36,7 +38,7 @@ func GetAllConsumerIds(ctx context.Context, provider *pb.MicroService) (allow []
 	//todo 删除服务，最后实例推送有误差
 	domain := util.ParseDomainProject(ctx)
 	project := util.ParseProject(ctx)
-	providerRules, err := getRulesUtil(ctx, domain, project, provider.ServiceId)
+	providerRules, err := GetRulesUtil(ctx, domain, project, provider.ServiceId)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -57,4 +59,24 @@ func GetConsumerIDsWithFilter(ctx context.Context, provider *pb.MicroService, ru
 		return nil, nil, err
 	}
 	return FilterAll(ctx, consumerIDs, rules)
+}
+
+func TransferToMicroServiceDependency(ctx context.Context, filter bson.M) (*pb.MicroServiceDependency, error) {
+	microServiceDependency := &pb.MicroServiceDependency{
+		Dependency: []*pb.MicroServiceKey{},
+	}
+	findRes, err := client.GetMongoClient().FindOne(context.TODO(), db.CollectionDep, filter)
+	if err != nil {
+		return nil, err
+	}
+	if findRes.Err() == nil {
+		var depRule *db.DependencyRule
+		err := findRes.Decode(&depRule)
+		if err != nil {
+			return nil, err
+		}
+		microServiceDependency.Dependency = append(microServiceDependency.Dependency, depRule.Dep.Dependency...)
+		return microServiceDependency, nil
+	}
+	return microServiceDependency, nil
 }

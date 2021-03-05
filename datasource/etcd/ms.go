@@ -2488,7 +2488,7 @@ func (ds *DataSource) DeleteServicePri(ctx context.Context, serviceID string, fo
 		return pb.CreateResponse(pb.ErrServiceNotExists, "Service does not exist."), nil
 	}
 
-	serviceUtil.RemandServiceQuota(ctx)
+	datasource.RemandServiceQuota(ctx)
 
 	log.Infof("%s micro-service[%s] successfully, operator: %s", title, serviceID, remoteIP)
 	return pb.CreateResponse(pb.ResponseSuccess, "Unregister service successfully."), nil

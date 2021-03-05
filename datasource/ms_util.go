@@ -18,9 +18,14 @@
 package datasource
 
 import (
+	"context"
+
+	"github.com/go-chassis/cari/discovery"
+
+	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/server/core"
-	"github.com/go-chassis/cari/discovery"
+	"github.com/apache/servicecomb-service-center/server/plugin/quota"
 )
 
 type GetInstanceCountByDomainResponse struct {
@@ -101,4 +106,22 @@ func TransServiceToKey(domainProject string, service *discovery.MicroService) *d
 		ServiceName: service.ServiceName,
 		Version:     service.Version,
 	}
+}
+
+func RemandServiceQuota(ctx context.Context) {
+	quota.Remand(ctx, quota.MicroServiceQuotaType)
+}
+
+func RemandInstanceQuota(ctx context.Context) {
+	quota.Remand(ctx, quota.MicroServiceInstanceQuotaType)
+}
+
+func CheckQuota(ctx context.Context, domainProject string) *quota.ApplyQuotaResult {
+	if core.IsSCInstance(ctx) {
+		log.Debugf("skip quota check")
+		return nil
+	}
+	res := quota.NewApplyQuotaResource(quota.MicroServiceQuotaType, domainProject, "", 1)
+	rst := quota.Apply(ctx, res)
+	return rst
 }

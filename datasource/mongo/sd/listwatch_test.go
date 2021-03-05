@@ -20,6 +20,7 @@
 package sd
 
 import (
+	"github.com/apache/servicecomb-service-center/datasource/mongo/db"
 	"github.com/apache/servicecomb-service-center/datasource/sdcommon"
 	"testing"
 
@@ -69,7 +70,7 @@ func TestDoParseWatchRspToMongoInfo(t *testing.T) {
 	info = ilw.doParseWatchRspToResource(mockWatchRsp)
 	assert.Equal(t, documentID.Hex(), info.DocumentID)
 	assert.Equal(t, "8064a600438511eb8584fa163e8a81c9", info.Key)
-	assert.Equal(t, "1608552622", info.Value.(Instance).Instance.ModTimestamp)
+	assert.Equal(t, "1608552622", info.Value.(db.Instance).Instance.ModTimestamp)
 
 	// case delete
 	mockWatchRsp.OperationType = deleteOp
