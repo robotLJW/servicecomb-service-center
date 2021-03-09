@@ -15,14 +15,21 @@
  * limitations under the License.
  */
 
-package mongo
+package util_test
 
 import (
-	"context"
-
-	pb "github.com/go-chassis/cari/discovery"
+	"github.com/apache/servicecomb-service-center/datasource/mongo/model"
+	"github.com/apache/servicecomb-service-center/datasource/mongo/util"
+	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
-func (ds *DataSource) GetServiceCountByDomainProject(ctx context.Context, request *pb.GetServiceCountRequest) (*pb.GetServiceCountResponse, error) {
-	panic("implement me")
+func TestNewFilter(t *testing.T) {
+
+	t.Run("add domain", func(t *testing.T) {
+		filter := util.NewFilter(util.Domain("default"), util.Project("project"))
+		assert.Equal(t, filter[model.ColumnDomain], "default")
+		assert.Equal(t, filter[model.ColumnProject], "project")
+	})
+
 }

@@ -21,6 +21,6 @@ import (
 
 var (
 	ErrCollectionsNil = errors.New("collection is nil")
-	ErrOpenDbFailed   = errors.New("open db failed")
+	ErrOpenDbFailed   = errors.New("open model failed")
 	ErrRootCAMissing  = errors.New("rootCAFile is empty in config file")
 )

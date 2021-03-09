@@ -64,7 +64,7 @@ func (apt *TagsChangedTask) publish(ctx context.Context, domainProject, consumer
 	consumer, err := serviceUtil.GetService(ctx, domainProject, consumerID)
 	if err != nil {
 		if errors.Is(err, datasource.ErrNoData) {
-			log.Debug(fmt.Sprintf("consumer[%s] does not exist in db", consumerID))
+			log.Debug(fmt.Sprintf("consumer[%s] does not exist in model", consumerID))
 		} else {
 			log.Error(fmt.Sprintf("get consumer[%s] for publish event failed", consumerID), err)
 		}

@@ -27,9 +27,9 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 
 	"github.com/apache/servicecomb-service-center/datasource"
-	"github.com/apache/servicecomb-service-center/datasource/mongo"
-	"github.com/apache/servicecomb-service-center/datasource/mongo/db"
+	"github.com/apache/servicecomb-service-center/datasource/mongo/model"
 	"github.com/apache/servicecomb-service-center/datasource/mongo/sd"
+	mutil "github.com/apache/servicecomb-service-center/datasource/mongo/util"
 	"github.com/apache/servicecomb-service-center/pkg/dump"
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	simple "github.com/apache/servicecomb-service-center/pkg/time"
@@ -44,23 +44,23 @@ type InstanceEventHandler struct {
 }
 
 func (h InstanceEventHandler) Type() string {
-	return db.CollectionInstance
+	return model.CollectionInstance
 }
 
 func (h InstanceEventHandler) OnEvent(evt sd.MongoEvent) {
 	action := evt.Type
-	instance := evt.Value.(db.Instance)
+	instance := evt.Value.(model.Instance)
 	providerID := instance.Instance.ServiceId
 	providerInstanceID := instance.Instance.InstanceId
 	domainProject := instance.Domain + "/" + instance.Project
 	cacheService := sd.Store().Service().Cache().Get(providerID)
 	var microService *discovery.MicroService
 	if cacheService != nil {
-		microService = cacheService.(db.Service).Service
+		microService = cacheService.(model.Service).Service
 	}
 	if microService == nil {
 		log.Info("get cached service failed, then get from database")
-		service, err := mongo.GetService(context.Background(), bson.M{"serviceinfo.serviceid": providerID})
+		service, err := mutil.GetService(context.Background(), bson.M{"serviceinfo.serviceid": providerID})
 		if err != nil {
 			if errors.Is(err, datasource.ErrNoData) {
 				log.Warn(fmt.Sprintf("there is no service with id [%s] in the database", providerID))
@@ -69,9 +69,9 @@ func (h InstanceEventHandler) OnEvent(evt sd.MongoEvent) {
 			}
 			return
 		}
-		microService = service.Service // service in the cache may not ready, query from db once
+		microService = service.Service // service in the cache may not ready, query from model once
 		if microService == nil {
-			log.Warn(fmt.Sprintf("caught [%s] instance[%s/%s] event, endpoints %v, get provider's file failed from db\n",
+			log.Warn(fmt.Sprintf("caught [%s] instance[%s/%s] event, endpoints %v, get provider's file failed from model\n",
 				action, providerID, providerInstanceID, instance.Instance.Endpoints))
 			return
 		}
@@ -80,7 +80,7 @@ func (h InstanceEventHandler) OnEvent(evt sd.MongoEvent) {
 		NotifySyncerInstanceEvent(evt, microService)
 	}
 	ctx := util.SetDomainProject(context.Background(), instance.Domain, instance.Project)
-	consumerIDS, _, err := mongo.GetAllConsumerIds(ctx, microService)
+	consumerIDS, _, err := mutil.GetAllConsumerIds(ctx, microService)
 	if err != nil {
 		log.Error(fmt.Sprintf("get service[%s][%s/%s/%s/%s]'s consumerIDs failed",
 			providerID, microService.Environment, microService.AppId, microService.ServiceName, microService.Version), err)
@@ -101,7 +101,7 @@ func PublishInstanceEvent(evt sd.MongoEvent, domainProject string, serviceKey *d
 		Response: discovery.CreateResponse(discovery.ResponseSuccess, "Watch instance successfully."),
 		Action:   string(evt.Type),
 		Key:      serviceKey,
-		Instance: evt.Value.(db.Instance).Instance,
+		Instance: evt.Value.(model.Instance).Instance,
 	}
 	for _, consumerID := range subscribers {
 		evt := notify.NewInstanceEventWithTime(consumerID, domainProject, -1, simple.FromTime(time.Now()), response)
@@ -113,10 +113,10 @@ func PublishInstanceEvent(evt sd.MongoEvent, domainProject string, serviceKey *d
 }
 
 func NotifySyncerInstanceEvent(event sd.MongoEvent, microService *discovery.MicroService) {
-	instance := event.Value.(db.Instance).Instance
+	instance := event.Value.(model.Instance).Instance
 	log.Info(fmt.Sprintf("instanceId : %s and serviceId : %s in NotifySyncerInstanceEvent", instance.InstanceId, instance.ServiceId))
-	instanceKey := util.StringJoin([]string{datasource.InstanceKeyPrefix, event.Value.(db.Instance).Domain,
-		event.Value.(db.Instance).Project, instance.ServiceId, instance.InstanceId}, datasource.SPLIT)
+	instanceKey := util.StringJoin([]string{datasource.InstanceKeyPrefix, event.Value.(model.Instance).Domain,
+		event.Value.(model.Instance).Project, instance.ServiceId, instance.InstanceId}, datasource.SPLIT)
 
 	instanceKv := dump.KV{
 		Key:   instanceKey,
@@ -127,8 +127,8 @@ func NotifySyncerInstanceEvent(event sd.MongoEvent, microService *discovery.Micr
 		KV:    &instanceKv,
 		Value: instance,
 	}
-	serviceKey := util.StringJoin([]string{datasource.ServiceKeyPrefix, event.Value.(db.Instance).Domain,
-		event.Value.(db.Instance).Project, instance.ServiceId}, datasource.SPLIT)
+	serviceKey := util.StringJoin([]string{datasource.ServiceKeyPrefix, event.Value.(model.Instance).Domain,
+		event.Value.(model.Instance).Project, instance.ServiceId}, datasource.SPLIT)
 	serviceKv := dump.KV{
 		Key:   serviceKey,
 		Value: microService,

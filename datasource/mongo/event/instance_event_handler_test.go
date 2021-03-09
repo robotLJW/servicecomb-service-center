@@ -29,7 +29,7 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/apache/servicecomb-service-center/datasource/mongo/client"
-	"github.com/apache/servicecomb-service-center/datasource/mongo/db"
+	"github.com/apache/servicecomb-service-center/datasource/mongo/model"
 	"github.com/apache/servicecomb-service-center/datasource/mongo/sd"
 	"github.com/apache/servicecomb-service-center/server/syncernotify"
 )
@@ -51,7 +51,7 @@ func TestInstanceEventHandler_OnEvent(t *testing.T) {
 	t.Run("when there is no such a service in database", func(t *testing.T) {
 		h := InstanceEventHandler{}
 		h.OnEvent(mongoEventWronServiceId())
-		assert.Error(t, assert.AnError, "get from db failed")
+		assert.Error(t, assert.AnError, "get from model failed")
 	})
 	t.Run("OnEvent test when syncer notify center closed", func(t *testing.T) {
 		h := InstanceEventHandler{}
@@ -87,7 +87,7 @@ func mongoAssign() sd.MongoEvent {
 		ServiceId:  "2a20507274fc71c925d138341517dce14b600744",
 		Endpoints:  endPoints,
 	}
-	mongoInstance := db.Instance{}
+	mongoInstance := model.Instance{}
 	mongoInstance.Instance = &instance
 	mongoInstance.Domain = "default"
 	mongoInstance.Project = "default"
@@ -107,7 +107,7 @@ func mongoEventWronServiceId() sd.MongoEvent {
 		ServiceId:  "2a20507274fc71c925d138341517dce14b6007443333",
 		Endpoints:  endPoints,
 	}
-	mongoInstance := db.Instance{}
+	mongoInstance := model.Instance{}
 	mongoInstance.Instance = &instance
 	mongoInstance.Domain = "default"
 	mongoInstance.Project = "default"

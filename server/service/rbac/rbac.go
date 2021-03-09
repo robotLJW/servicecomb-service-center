@@ -48,8 +48,8 @@ var (
 	ErrSamePassword         = errors.New("the password can not be same as old one")
 )
 
-//Init decide whether enable rbac function and save root account to db
-// if db has root account, abort creating.
+//Init decide whether enable rbac function and save root account to model
+// if model has root account, abort creating.
 func Init() {
 	if !Enabled() {
 		log.Info("rbac is disabled")

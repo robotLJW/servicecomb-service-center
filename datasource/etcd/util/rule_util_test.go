@@ -36,7 +36,7 @@ func TestRuleFilter_Filter(t *testing.T) {
 		ProviderRules: []*discovery.ServiceRule{},
 	}
 	var err error
-	t.Run("when there is no such a customer in db", func(t *testing.T) {
+	t.Run("when there is no such a customer in model", func(t *testing.T) {
 		_, err = rf.Filter(context.Background(), "")
 		if err != nil && !errors.Is(err, datasource.ErrNoData) {
 			t.Fatalf("RuleFilter Filter failed")

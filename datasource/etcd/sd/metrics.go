@@ -29,7 +29,7 @@ var (
 	eventsCounter = helper.NewGaugeVec(
 		prometheus.GaugeOpts{
 			Namespace: metrics.FamilyName,
-			Subsystem: "db",
+			Subsystem: "model",
 			Name:      "backend_event_total",
 			Help:      "Counter of backend events",
 		}, []string{"instance", "prefix"})
@@ -37,7 +37,7 @@ var (
 	eventsLatency = helper.NewSummaryVec(
 		prometheus.SummaryOpts{
 			Namespace:  metrics.FamilyName,
-			Subsystem:  "db",
+			Subsystem:  "model",
 			Name:       "backend_event_durations_microseconds",
 			Help:       "Latency of backend events processing",
 			Objectives: metrics.Pxx,

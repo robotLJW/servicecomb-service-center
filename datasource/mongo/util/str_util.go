@@ -15,14 +15,18 @@
  * limitations under the License.
  */
 
-package bootstrap
+package util
 
-import (
+import "strings"
 
-	// heartbeat
-	_ "github.com/apache/servicecomb-service-center/datasource/mongo/heartbeat/cache"
-	_ "github.com/apache/servicecomb-service-center/datasource/mongo/heartbeat/checker"
-
-	// events
-	_ "github.com/apache/servicecomb-service-center/datasource/mongo/event"
-)
+func StringBuilder(data []string) string {
+	var str strings.Builder
+	for index, value := range data {
+		if index == 0 {
+			str.WriteString(value)
+		} else {
+			str.WriteString("." + value)
+		}
+	}
+	return str.String()
+}

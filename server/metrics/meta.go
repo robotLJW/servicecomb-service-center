@@ -34,7 +34,7 @@ const (
 	KeySchemaTotal    = "schema_total"
 	KeyFrameworkTotal = "framework_total"
 
-	SubSystem = "db"
+	SubSystem = "model"
 )
 
 // Key return metrics key
@@ -54,7 +54,7 @@ var (
 	serviceCounter = helper.NewGaugeVec(
 		prometheus.GaugeOpts{
 			Namespace: metrics.FamilyName,
-			Subsystem: "db",
+			Subsystem: "model",
 			Name:      KeyServiceTotal,
 			Help:      "Gauge of microservice created in Service Center",
 		}, []string{"instance", "framework", "frameworkVersion", "domain"})
@@ -86,7 +86,7 @@ var (
 	scCounter = helper.NewCounterVec(
 		prometheus.CounterOpts{
 			Namespace: metrics.FamilyName,
-			Subsystem: "db",
+			Subsystem: "model",
 			Name:      "sc_total",
 			Help:      "Counter of the Service Center instance",
 		}, []string{"instance"})
@@ -94,7 +94,7 @@ var (
 	heartbeatCounter = helper.NewCounterVec(
 		prometheus.CounterOpts{
 			Namespace: metrics.FamilyName,
-			Subsystem: "db",
+			Subsystem: "model",
 			Name:      "heartbeat_total",
 			Help:      "Counter of heartbeat renew",
 		}, []string{"instance", "status"})
@@ -102,7 +102,7 @@ var (
 	heartbeatLatency = helper.NewSummaryVec(
 		prometheus.SummaryOpts{
 			Namespace:  metrics.FamilyName,
-			Subsystem:  "db",
+			Subsystem:  "model",
 			Name:       "heartbeat_durations_microseconds",
 			Help:       "Latency of heartbeat renew",
 			Objectives: metrics.Pxx,

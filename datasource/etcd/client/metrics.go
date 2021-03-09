@@ -34,7 +34,7 @@ var (
 	backendCounter = helper.NewGaugeVec(
 		prometheus.GaugeOpts{
 			Namespace: metrics.FamilyName,
-			Subsystem: "db",
+			Subsystem: "model",
 			Name:      "backend_total",
 			Help:      "Gauge of the backend instance",
 		}, []string{"instance"})
@@ -42,7 +42,7 @@ var (
 	operationCounter = helper.NewCounterVec(
 		prometheus.CounterOpts{
 			Namespace: metrics.FamilyName,
-			Subsystem: "db",
+			Subsystem: "model",
 			Name:      "backend_operation_total",
 			Help:      "Counter of backend operation",
 		}, []string{"instance", "operation", "status"})
@@ -50,7 +50,7 @@ var (
 	operationLatency = helper.NewSummaryVec(
 		prometheus.SummaryOpts{
 			Namespace:  metrics.FamilyName,
-			Subsystem:  "db",
+			Subsystem:  "model",
 			Name:       "backend_operation_durations_microseconds",
 			Help:       "Latency of backend operation",
 			Objectives: metrics.Pxx,

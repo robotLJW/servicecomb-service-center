@@ -15,7 +15,7 @@
 * limitations under the License.
  */
 
-package mongo_test
+package service_test
 
 import (
 	"testing"

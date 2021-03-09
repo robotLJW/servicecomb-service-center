@@ -26,38 +26,38 @@ import (
 )
 
 type Span struct {
-	TraceID string `thrift:"traceId,1" db:"traceId" json:"traceId"`
+	TraceID string `thrift:"traceId,1" model:"traceId" json:"traceId"`
 	// unused field # 2
-	Name        string        `thrift:"name,3" db:"name" json:"name"`
-	ID          string        `thrift:"id,4" db:"id" json:"id"`
-	ParentID    string        `thrift:"parentId,5" db:"parentId" json:"parentId,omitempty"`
-	Annotations []*Annotation `thrift:"annotations,6" db:"annotations" json:"annotations"`
+	Name        string        `thrift:"name,3" model:"name" json:"name"`
+	ID          string        `thrift:"id,4" model:"id" json:"id"`
+	ParentID    string        `thrift:"parentId,5" model:"parentId" json:"parentId,omitempty"`
+	Annotations []*Annotation `thrift:"annotations,6" model:"annotations" json:"annotations"`
 	// unused field # 7
-	BinaryAnnotations []*BinaryAnnotation `thrift:"binaryAnnotations,8" db:"binaryAnnotations" json:"binaryAnnotations"`
-	//Debug bool `thrift:"debug,9" db:"debug" json:"debug,omitempty"`
-	Timestamp *int64 `thrift:"timestamp,10" db:"timestamp" json:"timestamp,omitempty"`
-	Duration  *int64 `thrift:"duration,11" db:"duration" json:"duration,omitempty"`
-	//TraceIDHigh *int64 `thrift:"trace_id_high,12" db:"trace_id_high" json:"trace_id_high,omitempty"`
+	BinaryAnnotations []*BinaryAnnotation `thrift:"binaryAnnotations,8" model:"binaryAnnotations" json:"binaryAnnotations"`
+	//Debug bool `thrift:"debug,9" model:"debug" json:"debug,omitempty"`
+	Timestamp *int64 `thrift:"timestamp,10" model:"timestamp" json:"timestamp,omitempty"`
+	Duration  *int64 `thrift:"duration,11" model:"duration" json:"duration,omitempty"`
+	//TraceIDHigh *int64 `thrift:"trace_id_high,12" model:"trace_id_high" json:"trace_id_high,omitempty"`
 }
 
 type Annotation struct {
-	Timestamp int64     `thrift:"timestamp,1" db:"timestamp" json:"timestamp"`
-	Value     string    `thrift:"value,2" db:"value" json:"value"`
-	Host      *Endpoint `thrift:"endpoint,3" db:"endpoint" json:"endpoint,omitempty"`
+	Timestamp int64     `thrift:"timestamp,1" model:"timestamp" json:"timestamp"`
+	Value     string    `thrift:"value,2" model:"value" json:"value"`
+	Host      *Endpoint `thrift:"endpoint,3" model:"endpoint" json:"endpoint,omitempty"`
 }
 
 type BinaryAnnotation struct {
-	Key   string `thrift:"key,1" db:"key" json:"key"`
-	Value string `thrift:"value,2" db:"value" json:"value"`
-	//AnnotationType AnnotationType `thrift:"annotation_type,3" db:"annotation_type" json:"annotation_type"`
-	//Host *Endpoint `thrift:"endpoint,4" db:"endpoint" json:"endpoint,omitempty"`
+	Key   string `thrift:"key,1" model:"key" json:"key"`
+	Value string `thrift:"value,2" model:"value" json:"value"`
+	//AnnotationType AnnotationType `thrift:"annotation_type,3" model:"annotation_type" json:"annotation_type"`
+	//Host *Endpoint `thrift:"endpoint,4" model:"endpoint" json:"endpoint,omitempty"`
 }
 
 type Endpoint struct {
-	Ipv4        string `thrift:"ipv4,1" db:"ipv4" json:"ipv4"`
-	Port        int16  `thrift:"port,2" db:"port" json:"port"`
-	ServiceName string `thrift:"serviceName,3" db:"serviceName" json:"serviceName"`
-	Ipv6        []byte `thrift:"ipv6,4" db:"ipv6" json:"ipv6,omitempty"`
+	Ipv4        string `thrift:"ipv4,1" model:"ipv4" json:"ipv4"`
+	Port        int16  `thrift:"port,2" model:"port" json:"port"`
+	ServiceName string `thrift:"serviceName,3" model:"serviceName" json:"serviceName"`
+	Ipv6        []byte `thrift:"ipv6,4" model:"ipv6" json:"ipv6,omitempty"`
 }
 
 func (s *Span) FromZipkinSpan(span *zipkincore.Span) {

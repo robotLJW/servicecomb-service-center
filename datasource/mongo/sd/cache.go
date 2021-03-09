@@ -17,7 +17,7 @@
 
 package sd
 
-// Cache stores db data.
+// Cache stores model data.
 type Cache interface {
 	CacheReader
 

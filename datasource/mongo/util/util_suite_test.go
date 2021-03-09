@@ -15,43 +15,21 @@
  * limitations under the License.
  */
 
-package mongo_test
+package util_test
 
 // initialize
 import (
-	"context"
-
-	"github.com/apache/servicecomb-service-center/datasource"
-	"github.com/apache/servicecomb-service-center/pkg/util"
-	_ "github.com/apache/servicecomb-service-center/test"
+	"testing"
 
 	. "github.com/onsi/ginkgo"
 	"github.com/onsi/ginkgo/reporters"
-
-	"testing"
-	"time"
-
 	. "github.com/onsi/gomega"
+
+	_ "github.com/apache/servicecomb-service-center/test"
 )
 
-var timeLimit = 2 * time.Second
-
-var _ = BeforeSuite(func() {
-	//clear service created in last test
-	time.Sleep(timeLimit)
-	_ = datasource.Instance().ClearNoInstanceServices(context.Background(), timeLimit)
-})
-
-func getContext() context.Context {
-	return util.WithNoCache(util.SetDomainProject(context.Background(), "default", "default"))
-}
-
-func depGetContext() context.Context {
-	return util.WithNoCache(util.SetDomainProject(context.Background(), "new_default", "new_default"))
-}
-
-func TestMongo(t *testing.T) {
+func TestMicroservice(t *testing.T) {
 	RegisterFailHandler(Fail)
-	junitReporter := reporters.NewJUnitReporter("mongo.junit.xml")
-	RunSpecsWithDefaultAndCustomReporters(t, "mongo Suite", []Reporter{junitReporter})
+	junitReporter := reporters.NewJUnitReporter("util.junit.xml")
+	RunSpecsWithDefaultAndCustomReporters(t, "util Suite", []Reporter{junitReporter})
 }

@@ -196,7 +196,7 @@ func (ds *DataSource) GetService(ctx context.Context, request *pb.GetServiceRequ
 
 	if err != nil {
 		if errors.Is(err, datasource.ErrNoData) {
-			log.Debug(fmt.Sprintf("get micro-service[%s] failed, service does not exist in db", request.ServiceId))
+			log.Debug(fmt.Sprintf("get micro-service[%s] failed, service does not exist in model", request.ServiceId))
 			return &pb.GetServiceResponse{
 				Response: pb.CreateResponse(pb.ErrServiceNotExists, "Service does not exist."),
 			}, nil
@@ -668,7 +668,7 @@ func (ds *DataSource) GetInstance(ctx context.Context, request *pb.GetOneInstanc
 		service, err = serviceUtil.GetService(ctx, domainProject, request.ConsumerServiceId)
 		if err != nil {
 			if errors.Is(err, datasource.ErrNoData) {
-				log.Debug(fmt.Sprintf("consumer does not exist in db, consumer[%s] find provider instance[%s/%s]",
+				log.Debug(fmt.Sprintf("consumer does not exist in model, consumer[%s] find provider instance[%s/%s]",
 					request.ConsumerServiceId, request.ProviderServiceId, request.ProviderInstanceId))
 				return &pb.GetOneInstanceResponse{
 					Response: pb.CreateResponse(pb.ErrServiceNotExists,
@@ -686,7 +686,7 @@ func (ds *DataSource) GetInstance(ctx context.Context, request *pb.GetOneInstanc
 	provider, err := serviceUtil.GetService(ctx, domainProject, request.ProviderServiceId)
 	if err != nil {
 		if errors.Is(err, datasource.ErrNoData) {
-			log.Debug(fmt.Sprintf("provider does not exist in db, consumer[%s] find provider instance[%s/%s]",
+			log.Debug(fmt.Sprintf("provider does not exist in model, consumer[%s] find provider instance[%s/%s]",
 				request.ConsumerServiceId, request.ProviderServiceId, request.ProviderInstanceId))
 			return &pb.GetOneInstanceResponse{
 				Response: pb.CreateResponse(pb.ErrServiceNotExists,
@@ -749,7 +749,7 @@ func (ds *DataSource) GetInstances(ctx context.Context, request *pb.GetInstances
 		service, err = serviceUtil.GetService(ctx, domainProject, request.ConsumerServiceId)
 		if err != nil {
 			if errors.Is(err, datasource.ErrNoData) {
-				log.Debug(fmt.Sprintf("consumer does not exist in db, consumer[%s] find provider[%s] instances",
+				log.Debug(fmt.Sprintf("consumer does not exist in model, consumer[%s] find provider[%s] instances",
 					request.ConsumerServiceId, request.ProviderServiceId))
 				return &pb.GetInstancesResponse{
 					Response: pb.CreateResponse(pb.ErrServiceNotExists,
@@ -1345,7 +1345,7 @@ func (ds *DataSource) ModifySchemas(ctx context.Context, request *pb.ModifySchem
 	serviceInfo, err := serviceUtil.GetService(ctx, domainProject, serviceID)
 	if err != nil {
 		if errors.Is(err, datasource.ErrNoData) {
-			log.Debug(fmt.Sprintf("modify service[%s] schemas failed, service does not exist in db, operator: %s",
+			log.Debug(fmt.Sprintf("modify service[%s] schemas failed, service does not exist in model, operator: %s",
 				serviceID, remoteIP))
 			return &pb.ModifySchemasResponse{
 				Response: pb.CreateResponse(pb.ErrServiceNotExists, "Service does not exist."),
@@ -1495,7 +1495,7 @@ func (ds *DataSource) GetAllSchemas(ctx context.Context, request *pb.GetAllSchem
 	service, err := serviceUtil.GetService(ctx, domainProject, request.ServiceId)
 	if err != nil {
 		if errors.Is(err, datasource.ErrNoData) {
-			log.Debug(fmt.Sprintf("get service[%s] all schemas failed, service does not exist in db", request.ServiceId))
+			log.Debug(fmt.Sprintf("get service[%s] all schemas failed, service does not exist in model", request.ServiceId))
 			return &pb.GetAllSchemaResponse{
 				Response: pb.CreateResponse(pb.ErrServiceNotExists, "Service does not exist."),
 			}, nil

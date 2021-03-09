@@ -39,7 +39,7 @@ func newEmbeddedAuthenticator(opts *authr.Options) (authr.Authenticator, error) 
 	return &EmbeddedAuthenticator{}, nil
 }
 
-//Login check db user and password,will verify and return token for valid account
+//Login check model user and password,will verify and return token for valid account
 func (a *EmbeddedAuthenticator) Login(ctx context.Context, user string, password string, opts ...authr.LoginOption) (string, error) {
 	opt := &authr.LoginOptions{}
 	for _, o := range opts {

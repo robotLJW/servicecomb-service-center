@@ -15,14 +15,14 @@
  * limitations under the License.
  */
 
-package bootstrap
+package service
 
 import (
+	"context"
 
-	// heartbeat
-	_ "github.com/apache/servicecomb-service-center/datasource/mongo/heartbeat/cache"
-	_ "github.com/apache/servicecomb-service-center/datasource/mongo/heartbeat/checker"
-
-	// events
-	_ "github.com/apache/servicecomb-service-center/datasource/mongo/event"
+	pb "github.com/go-chassis/cari/discovery"
 )
+
+func (ds *DataSource) GetServiceCountByDomainProject(ctx context.Context, request *pb.GetServiceCountRequest) (*pb.GetServiceCountResponse, error) {
+	panic("implement me")
+}

@@ -782,7 +782,7 @@ func (m *mockKVForPagine) Txn(ctx context.Context) clientv3.Txn {
 	return nil
 }
 
-// test scenario: db data decreases during paging.
+// test scenario: model data decreases during paging.
 func TestEtcdClient_paging(t *testing.T) {
 	// key range: [startKey, endKey)
 	generateGetResp := func(startKey, endKey int) *clientv3.GetResponse {

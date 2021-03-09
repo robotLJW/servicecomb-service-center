@@ -39,12 +39,12 @@ func (ds *DataSource) SearchProviderDependency(ctx context.Context, request *pb.
 
 	if err != nil {
 		if errors.Is(err, datasource.ErrNoData) {
-			log.Debug(fmt.Sprintf("provider[%s] does not exist in db", providerServiceID))
+			log.Debug(fmt.Sprintf("provider[%s] does not exist in model", providerServiceID))
 			return &pb.GetProDependenciesResponse{
 				Response: pb.CreateResponse(pb.ErrServiceNotExists, "Provider does not exist"),
 			}, nil
 		}
-		log.Error(fmt.Sprintf("query provider service from db failed, provider is %s", providerServiceID), err)
+		log.Error(fmt.Sprintf("query provider service from model failed, provider is %s", providerServiceID), err)
 		return nil, err
 	}
 

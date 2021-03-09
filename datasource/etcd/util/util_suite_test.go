@@ -70,7 +70,7 @@ func TestFindServiceIds(t *testing.T) {
 
 func TestGetService(t *testing.T) {
 	var err error
-	t.Run("when there is no such a service in db", func(t *testing.T) {
+	t.Run("when there is no such a service in model", func(t *testing.T) {
 		_, err = serviceUtil.GetService(context.Background(), "", "")
 		if err != nil && !errors.Is(err, datasource.ErrNoData) {
 			t.Fatalf("TestGetService failed")
@@ -88,7 +88,7 @@ func TestGetService(t *testing.T) {
 		t.Fatalf("TestGetService failed")
 	}
 
-	t.Run("when there is no such a service in db", func(t *testing.T) {
+	t.Run("when there is no such a service in model", func(t *testing.T) {
 		_, err = serviceUtil.GetServiceWithRev(context.Background(), "", "", 0)
 		if err != nil && !errors.Is(err, datasource.ErrNoData) {
 			t.Fatalf("TestGetService failed")

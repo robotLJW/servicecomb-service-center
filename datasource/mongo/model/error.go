@@ -15,11 +15,12 @@
  * limitations under the License.
  */
 
-package mongo
+package model
 
 import "errors"
 
 var (
+	ErrNoData                               = errors.New("no data found")
 	ErrInvalidConsumer                      = errors.New("Invalid consumer")
 	ErrUpdateNodata                         = errors.New("UpdateAccount: no data to update")
 	ErrServiceFileLost                      = errors.New("service center service file lost")
