@@ -21,9 +21,10 @@ import (
 	"math"
 	"regexp"
 
+	"github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/pkg/validate"
-	"github.com/go-chassis/cari/discovery"
 )
 
 var (

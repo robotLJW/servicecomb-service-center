@@ -18,10 +18,10 @@
 package util_test
 
 import (
+	. "github.com/apache/servicecomb-service-center/datasource/etcd/util"
+
 	"context"
 	"testing"
-
-	. "github.com/apache/servicecomb-service-center/datasource/etcd/util"
 )
 
 func TestCheckSchemaInfoExist(t *testing.T) {

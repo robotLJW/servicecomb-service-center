@@ -24,8 +24,9 @@ import (
 	"crypto/tls"
 	"testing"
 
-	pb "github.com/apache/servicecomb-service-center/syncer/proto"
 	"github.com/stretchr/testify/assert"
+
+	pb "github.com/apache/servicecomb-service-center/syncer/proto"
 )
 
 var c = NewSyncClient("", new(tls.Config))

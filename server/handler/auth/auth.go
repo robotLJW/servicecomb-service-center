@@ -20,12 +20,13 @@ package auth
 import (
 	"net/http"
 
+	"github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/pkg/chain"
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/rest"
 	"github.com/apache/servicecomb-service-center/server/plugin/auth"
 	"github.com/apache/servicecomb-service-center/server/rest/controller"
-	"github.com/go-chassis/cari/discovery"
 )
 
 type Handler struct {

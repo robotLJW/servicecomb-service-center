@@ -20,10 +20,11 @@ package storage
 import (
 	"context"
 
-	"github.com/apache/servicecomb-service-center/pkg/log"
-	pb "github.com/apache/servicecomb-service-center/syncer/proto"
 	"github.com/coreos/etcd/clientv3"
 	"google.golang.org/protobuf/proto"
+
+	"github.com/apache/servicecomb-service-center/pkg/log"
+	pb "github.com/apache/servicecomb-service-center/syncer/proto"
 )
 
 type Storage interface {

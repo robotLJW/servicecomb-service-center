@@ -17,15 +17,16 @@
 package service_test
 
 import (
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+
 	"strconv"
 	"strings"
 
-	"github.com/apache/servicecomb-service-center/server/plugin/quota"
-	"github.com/apache/servicecomb-service-center/server/service"
 	pb "github.com/go-chassis/cari/discovery"
 
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
+	"github.com/apache/servicecomb-service-center/server/plugin/quota"
+	"github.com/apache/servicecomb-service-center/server/service"
 )
 
 const (

@@ -24,11 +24,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/apache/servicecomb-service-center/pkg/util"
-
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
+
+	"github.com/apache/servicecomb-service-center/pkg/util"
 )
 
 const (

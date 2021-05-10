@@ -18,9 +18,10 @@
 package metrics
 
 import (
+	"github.com/prometheus/client_golang/prometheus/promhttp"
+
 	"github.com/apache/servicecomb-service-center/server/config"
 	"github.com/apache/servicecomb-service-center/server/rest"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
 func init() {

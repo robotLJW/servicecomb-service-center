@@ -21,12 +21,13 @@ import (
 	"context"
 	"fmt"
 
+	scpb "github.com/go-chassis/cari/discovery"
+	"google.golang.org/protobuf/proto"
+
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	pb "github.com/apache/servicecomb-service-center/syncer/proto"
 	pbsc "github.com/apache/servicecomb-service-center/syncer/proto/sc"
-	scpb "github.com/go-chassis/cari/discovery"
-	"google.golang.org/protobuf/proto"
 )
 
 // CreateService creates the service of servicecenter

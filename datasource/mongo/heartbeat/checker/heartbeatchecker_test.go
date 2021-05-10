@@ -22,11 +22,12 @@ import (
 	"testing"
 	"time"
 
+	pb "github.com/go-chassis/cari/discovery"
+	"github.com/stretchr/testify/assert"
+
 	"github.com/apache/servicecomb-service-center/datasource/mongo/client"
 	"github.com/apache/servicecomb-service-center/datasource/mongo/client/model"
 	"github.com/apache/servicecomb-service-center/datasource/mongo/util"
-	pb "github.com/go-chassis/cari/discovery"
-	"github.com/stretchr/testify/assert"
 )
 
 func TestHeartbeat(t *testing.T) {

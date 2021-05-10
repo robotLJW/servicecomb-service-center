@@ -20,10 +20,11 @@ package rbacframe_test
 import (
 	"testing"
 
-	"github.com/apache/servicecomb-service-center/pkg/rbacframe"
 	"github.com/go-chassis/go-chassis/v2/security/secret"
 	"github.com/go-chassis/go-chassis/v2/security/token"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/apache/servicecomb-service-center/pkg/rbacframe"
 )
 
 func TestMustAuth(t *testing.T) {

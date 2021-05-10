@@ -16,8 +16,9 @@
 package get
 
 import (
-	"github.com/apache/servicecomb-service-center/scctl/pkg/cmd"
 	"github.com/spf13/cobra"
+
+	"github.com/apache/servicecomb-service-center/scctl/pkg/cmd"
 )
 
 var (

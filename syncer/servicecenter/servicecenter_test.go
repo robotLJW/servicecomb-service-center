@@ -22,13 +22,14 @@ import (
 	"strconv"
 	"testing"
 
+	"github.com/stretchr/testify/assert"
+
 	"github.com/apache/servicecomb-service-center/syncer/config"
 	"github.com/apache/servicecomb-service-center/syncer/pkg/mock/mockplugin"
 	"github.com/apache/servicecomb-service-center/syncer/pkg/mock/mocksotrage"
 	"github.com/apache/servicecomb-service-center/syncer/plugins"
 	pb "github.com/apache/servicecomb-service-center/syncer/proto"
 	"github.com/apache/servicecomb-service-center/syncer/servicecenter"
-	"github.com/stretchr/testify/assert"
 )
 
 func TestNewServicecenter(t *testing.T) {

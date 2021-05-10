@@ -21,7 +21,6 @@ import (
 	"context"
 	"errors"
 
-	mutil "github.com/apache/servicecomb-service-center/datasource/mongo/util"
 	"github.com/go-chassis/cari/discovery"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -29,6 +28,7 @@ import (
 	"github.com/apache/servicecomb-service-center/datasource"
 	"github.com/apache/servicecomb-service-center/datasource/mongo/client"
 	"github.com/apache/servicecomb-service-center/datasource/mongo/client/model"
+	mutil "github.com/apache/servicecomb-service-center/datasource/mongo/util"
 )
 
 func GetServiceByID(ctx context.Context, serviceID string) (*model.Service, error) {

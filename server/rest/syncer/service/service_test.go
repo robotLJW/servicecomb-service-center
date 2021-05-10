@@ -18,6 +18,8 @@ package service_test
 
 // initialize
 import (
+	_ "github.com/apache/servicecomb-service-center/test"
+
 	"context"
 	"io"
 	"net/http"
@@ -26,13 +28,13 @@ import (
 	"path/filepath"
 	"testing"
 
+	"github.com/go-chassis/go-archaius"
+	"github.com/stretchr/testify/assert"
+
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/server/config"
 	"github.com/apache/servicecomb-service-center/server/rest/syncer"
 	"github.com/apache/servicecomb-service-center/server/rest/syncer/service"
-	_ "github.com/apache/servicecomb-service-center/test"
-	"github.com/go-chassis/go-archaius"
-	"github.com/stretchr/testify/assert"
 )
 
 type mockSyncerHandler struct {

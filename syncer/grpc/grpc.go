@@ -22,12 +22,13 @@ import (
 	"math"
 	"net"
 
-	"github.com/apache/servicecomb-service-center/pkg/log"
-	"github.com/apache/servicecomb-service-center/pkg/rpc"
-	"github.com/apache/servicecomb-service-center/syncer/pkg/utils"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
+
+	"github.com/apache/servicecomb-service-center/pkg/log"
+	"github.com/apache/servicecomb-service-center/pkg/rpc"
+	"github.com/apache/servicecomb-service-center/syncer/pkg/utils"
 )
 
 // Server struct

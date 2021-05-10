@@ -22,9 +22,10 @@ package sd
 import (
 	"testing"
 
-	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/go-chassis/cari/discovery"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/apache/servicecomb-service-center/pkg/log"
 )
 
 func TestOptions(t *testing.T) {

@@ -18,20 +18,21 @@
 package checker
 
 import (
+	_ "github.com/apache/servicecomb-service-center/server/init"
+	_ "github.com/apache/servicecomb-service-center/server/plugin/security/cipher/buildin"
+
 	"context"
 	"testing"
 	"time"
 
-	_ "github.com/apache/servicecomb-service-center/server/init"
-	_ "github.com/apache/servicecomb-service-center/server/plugin/security/cipher/buildin"
+	pb "github.com/go-chassis/cari/discovery"
+	"github.com/go-chassis/go-chassis/v2/storage"
+	"github.com/stretchr/testify/assert"
 
 	"github.com/apache/servicecomb-service-center/datasource/mongo/client"
 	"github.com/apache/servicecomb-service-center/datasource/mongo/client/model"
 	"github.com/apache/servicecomb-service-center/datasource/mongo/util"
 	"github.com/apache/servicecomb-service-center/pkg/log"
-	pb "github.com/go-chassis/cari/discovery"
-	"github.com/go-chassis/go-chassis/v2/storage"
-	"github.com/stretchr/testify/assert"
 )
 
 func init() {

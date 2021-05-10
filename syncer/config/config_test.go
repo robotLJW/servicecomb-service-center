@@ -22,9 +22,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/apache/servicecomb-service-center/syncer/pkg/utils"
-
 	"github.com/stretchr/testify/assert"
+
+	"github.com/apache/servicecomb-service-center/syncer/pkg/utils"
 )
 
 func TestDefaultConfig(t *testing.T) {

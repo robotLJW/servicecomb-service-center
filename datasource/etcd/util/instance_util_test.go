@@ -18,12 +18,14 @@
 package util_test
 
 import (
+	. "github.com/apache/servicecomb-service-center/datasource/etcd/util"
+
 	"context"
 	"testing"
 
-	. "github.com/apache/servicecomb-service-center/datasource/etcd/util"
-	"github.com/apache/servicecomb-service-center/pkg/util"
 	pb "github.com/go-chassis/cari/discovery"
+
+	"github.com/apache/servicecomb-service-center/pkg/util"
 )
 
 func TestFormatRevision(t *testing.T) {

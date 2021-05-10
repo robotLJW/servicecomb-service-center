@@ -18,17 +18,17 @@
 package config
 
 import (
+	"errors"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strconv"
 
-	"errors"
+	"gopkg.in/yaml.v2"
+	"k8s.io/apimachinery/pkg/util/uuid"
 
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/syncer/pkg/utils"
-	"gopkg.in/yaml.v2"
-	"k8s.io/apimachinery/pkg/util/uuid"
 )
 
 // DefaultConfig returns the default config

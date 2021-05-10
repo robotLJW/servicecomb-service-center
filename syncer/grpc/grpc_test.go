@@ -23,10 +23,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/apache/servicecomb-service-center/pkg/rpc"
-	pb "github.com/apache/servicecomb-service-center/syncer/proto"
 	"github.com/stretchr/testify/assert"
 	ggrpc "google.golang.org/grpc"
+
+	"github.com/apache/servicecomb-service-center/pkg/rpc"
+	pb "github.com/apache/servicecomb-service-center/syncer/proto"
 )
 
 type testServer struct{}

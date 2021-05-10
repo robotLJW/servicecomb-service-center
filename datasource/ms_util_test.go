@@ -18,9 +18,11 @@
 package datasource_test
 
 import (
-	"github.com/apache/servicecomb-service-center/datasource"
-	"github.com/go-chassis/cari/discovery"
 	"testing"
+
+	"github.com/go-chassis/cari/discovery"
+
+	"github.com/apache/servicecomb-service-center/datasource"
 )
 
 func TestSetDefault(t *testing.T) {

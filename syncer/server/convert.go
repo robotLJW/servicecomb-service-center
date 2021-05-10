@@ -23,7 +23,6 @@ import (
 	"strings"
 
 	"github.com/apache/servicecomb-service-center/pkg/log"
-
 	"github.com/apache/servicecomb-service-center/pkg/tlsutil"
 	"github.com/apache/servicecomb-service-center/syncer/config"
 	"github.com/apache/servicecomb-service-center/syncer/etcd"

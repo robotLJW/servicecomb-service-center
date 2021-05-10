@@ -25,12 +25,13 @@ import (
 	"strconv"
 	"testing"
 
+	"github.com/go-chassis/cari/discovery"
+	"github.com/stretchr/testify/assert"
+
 	"github.com/apache/servicecomb-service-center/pkg/dump"
 	"github.com/apache/servicecomb-service-center/syncer/config"
 	pb "github.com/apache/servicecomb-service-center/syncer/proto"
 	"github.com/apache/servicecomb-service-center/syncer/serf"
-	"github.com/go-chassis/cari/discovery"
-	"github.com/stretchr/testify/assert"
 )
 
 var s Server

@@ -20,10 +20,11 @@ package metrics
 import (
 	"time"
 
+	"github.com/prometheus/client_golang/prometheus"
+
 	"github.com/apache/servicecomb-service-center/pkg/metrics"
 	"github.com/apache/servicecomb-service-center/pkg/notify"
 	helper "github.com/apache/servicecomb-service-center/pkg/prometheus"
-	"github.com/prometheus/client_golang/prometheus"
 )
 
 var (

@@ -18,6 +18,8 @@
 package util_test
 
 import (
+	. "github.com/apache/servicecomb-service-center/datasource/etcd/util"
+
 	"context"
 	"errors"
 	"testing"
@@ -26,7 +28,6 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"github.com/apache/servicecomb-service-center/datasource"
-	. "github.com/apache/servicecomb-service-center/datasource/etcd/util"
 )
 
 func TestDeleteDependencyForService(t *testing.T) {

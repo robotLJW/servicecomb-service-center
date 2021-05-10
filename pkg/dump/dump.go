@@ -18,8 +18,9 @@
 package dump
 
 import (
-	"github.com/apache/servicecomb-service-center/version"
 	"github.com/go-chassis/cari/discovery"
+
+	"github.com/apache/servicecomb-service-center/version"
 )
 
 type Getter interface {

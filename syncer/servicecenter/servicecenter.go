@@ -22,13 +22,14 @@ import (
 	"errors"
 	"fmt"
 
+	"github.com/coreos/etcd/clientv3"
+	"github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/syncer/pkg/utils"
 	"github.com/apache/servicecomb-service-center/syncer/plugins"
 	pb "github.com/apache/servicecomb-service-center/syncer/proto"
 	"github.com/apache/servicecomb-service-center/syncer/servicecenter/storage"
-	"github.com/coreos/etcd/clientv3"
-	"github.com/go-chassis/cari/discovery"
 )
 
 // Store interface of servicecenter

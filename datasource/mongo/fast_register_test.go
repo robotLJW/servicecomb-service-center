@@ -22,10 +22,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/apache/servicecomb-service-center/datasource"
-	"github.com/apache/servicecomb-service-center/datasource/mongo"
 	pb "github.com/go-chassis/cari/discovery"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/apache/servicecomb-service-center/datasource"
+	"github.com/apache/servicecomb-service-center/datasource/mongo"
 )
 
 func TestInstance_BatchCreate(t *testing.T) {

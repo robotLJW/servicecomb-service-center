@@ -19,11 +19,9 @@ package admin
 
 import (
 	"net/http"
-
-	"github.com/apache/servicecomb-service-center/pkg/dump"
-
 	"strings"
 
+	"github.com/apache/servicecomb-service-center/pkg/dump"
 	"github.com/apache/servicecomb-service-center/pkg/rest"
 	"github.com/apache/servicecomb-service-center/server/rest/controller"
 )

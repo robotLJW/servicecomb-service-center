@@ -18,8 +18,9 @@
 package metrics
 
 import (
-	"github.com/apache/servicecomb-service-center/pkg/metrics"
 	dto "github.com/prometheus/client_model/go"
+
+	"github.com/apache/servicecomb-service-center/pkg/metrics"
 )
 
 const (

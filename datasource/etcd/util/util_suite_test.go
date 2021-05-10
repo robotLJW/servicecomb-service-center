@@ -19,24 +19,23 @@ package util_test
 
 // initialize
 import (
+	_ "github.com/apache/servicecomb-service-center/test"
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+
 	"context"
 	"errors"
 	"github.com/stretchr/testify/assert"
 	"testing"
 
+	proto "github.com/go-chassis/cari/discovery"
+	"github.com/onsi/ginkgo/reporters"
+
 	"github.com/apache/servicecomb-service-center/datasource"
 	"github.com/apache/servicecomb-service-center/datasource/etcd/client"
-	_ "github.com/apache/servicecomb-service-center/test"
 
 	serviceUtil "github.com/apache/servicecomb-service-center/datasource/etcd/util"
 	"github.com/apache/servicecomb-service-center/pkg/util"
-
-	proto "github.com/go-chassis/cari/discovery"
-
-	. "github.com/onsi/ginkgo"
-	"github.com/onsi/ginkgo/reporters"
-
-	. "github.com/onsi/gomega"
 )
 
 func init() {

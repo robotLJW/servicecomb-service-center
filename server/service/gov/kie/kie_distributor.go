@@ -28,13 +28,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/apache/servicecomb-service-center/pkg/log"
-
-	"github.com/apache/servicecomb-service-center/pkg/gov"
-	"github.com/apache/servicecomb-service-center/server/config"
-	svc "github.com/apache/servicecomb-service-center/server/service/gov"
 	"github.com/ghodss/yaml"
 	"github.com/go-chassis/kie-client"
+
+	"github.com/apache/servicecomb-service-center/pkg/gov"
+	"github.com/apache/servicecomb-service-center/pkg/log"
+	"github.com/apache/servicecomb-service-center/server/config"
+	svc "github.com/apache/servicecomb-service-center/server/service/gov"
 )
 
 type Distributor struct {

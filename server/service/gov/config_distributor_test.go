@@ -18,14 +18,16 @@
 package gov_test
 
 import (
+	_ "github.com/apache/servicecomb-service-center/server/service/gov/mock"
+
 	"encoding/json"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 
 	"github.com/apache/servicecomb-service-center/pkg/gov"
 	"github.com/apache/servicecomb-service-center/server/config"
 	svc "github.com/apache/servicecomb-service-center/server/service/gov"
-	_ "github.com/apache/servicecomb-service-center/server/service/gov/mock"
-	"github.com/stretchr/testify/assert"
 )
 
 const Project = "default"

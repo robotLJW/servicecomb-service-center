@@ -17,10 +17,9 @@
 package task
 
 import (
-	"testing"
-
 	"context"
 	"errors"
+	"testing"
 	"time"
 )
 

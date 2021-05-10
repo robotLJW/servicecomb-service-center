@@ -21,8 +21,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/apache/servicecomb-service-center/server/service/rbac"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/apache/servicecomb-service-center/server/service/rbac"
 )
 
 func TestCountFailure(t *testing.T) {

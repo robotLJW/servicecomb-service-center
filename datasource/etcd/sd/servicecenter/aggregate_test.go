@@ -16,10 +16,10 @@
 package servicecenter_test
 
 import (
-	"testing"
-
 	. "github.com/apache/servicecomb-service-center/datasource/etcd/sd/servicecenter"
 	_ "github.com/apache/servicecomb-service-center/test"
+
+	"testing"
 
 	"github.com/apache/servicecomb-service-center/datasource/etcd"
 )

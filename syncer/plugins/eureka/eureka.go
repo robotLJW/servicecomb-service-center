@@ -25,7 +25,6 @@ import (
 	"net/http"
 
 	"github.com/apache/servicecomb-service-center/client"
-
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/syncer/plugins"
 	pb "github.com/apache/servicecomb-service-center/syncer/proto"

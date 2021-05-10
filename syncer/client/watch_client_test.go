@@ -22,9 +22,10 @@ package client
 import (
 	"testing"
 
+	"github.com/stretchr/testify/assert"
+
 	"github.com/apache/servicecomb-service-center/pkg/dump"
 	"github.com/apache/servicecomb-service-center/pkg/log"
-	"github.com/stretchr/testify/assert"
 )
 
 func TestWatchInstance(t *testing.T) {

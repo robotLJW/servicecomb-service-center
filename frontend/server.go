@@ -22,9 +22,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/apache/servicecomb-service-center/frontend/schema"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+
+	"github.com/apache/servicecomb-service-center/frontend/schema"
 )
 
 func Serve(c Config) {

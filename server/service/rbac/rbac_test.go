@@ -18,21 +18,24 @@
 package rbac_test
 
 import (
-	"context"
-	"github.com/apache/servicecomb-service-center/pkg/privacy"
-	"github.com/apache/servicecomb-service-center/pkg/rbacframe"
-	"github.com/apache/servicecomb-service-center/server/config"
-	"github.com/apache/servicecomb-service-center/server/service/rbac"
-	"github.com/apache/servicecomb-service-center/server/service/rbac/dao"
 	_ "github.com/apache/servicecomb-service-center/test"
+
+	"context"
+	"io/ioutil"
+	"testing"
+
 	"github.com/astaxie/beego"
 	rbacmodel "github.com/go-chassis/cari/rbac"
 	"github.com/go-chassis/go-archaius"
 	"github.com/go-chassis/go-chassis/v2/security/authr"
 	"github.com/go-chassis/go-chassis/v2/security/secret"
 	"github.com/stretchr/testify/assert"
-	"io/ioutil"
-	"testing"
+
+	"github.com/apache/servicecomb-service-center/pkg/privacy"
+	"github.com/apache/servicecomb-service-center/pkg/rbacframe"
+	"github.com/apache/servicecomb-service-center/server/config"
+	"github.com/apache/servicecomb-service-center/server/service/rbac"
+	"github.com/apache/servicecomb-service-center/server/service/rbac/dao"
 )
 
 func init() {

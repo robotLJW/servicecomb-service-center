@@ -19,7 +19,6 @@ package main
 import (
 	"flag"
 	"fmt"
-
 	"net"
 	"net/url"
 	"strconv"

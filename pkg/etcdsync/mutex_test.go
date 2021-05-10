@@ -19,17 +19,17 @@ package etcdsync_test
 
 // initialize
 import (
+	_ "github.com/apache/servicecomb-service-center/datasource/etcd/client/remote"
+	_ "github.com/apache/servicecomb-service-center/server/plugin/tracing/pzipkin"
+	_ "github.com/apache/servicecomb-service-center/test"
+
 	"fmt"
 	"testing"
 
-	"github.com/apache/servicecomb-service-center/pkg/etcdsync"
-	_ "github.com/apache/servicecomb-service-center/test"
 	"github.com/astaxie/beego"
 	"github.com/stretchr/testify/assert"
 
-	_ "github.com/apache/servicecomb-service-center/datasource/etcd/client/remote"
-
-	_ "github.com/apache/servicecomb-service-center/server/plugin/tracing/pzipkin"
+	"github.com/apache/servicecomb-service-center/pkg/etcdsync"
 )
 
 func init() {

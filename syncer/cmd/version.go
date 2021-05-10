@@ -18,8 +18,9 @@
 package cmd
 
 import (
-	"github.com/apache/servicecomb-service-center/syncer/version"
 	"github.com/spf13/cobra"
+
+	"github.com/apache/servicecomb-service-center/syncer/version"
 )
 
 var versionCmd = &cobra.Command{

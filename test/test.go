@@ -19,14 +19,14 @@
 package test
 
 import (
+	_ "github.com/apache/servicecomb-service-center/server/bootstrap"
 	_ "github.com/apache/servicecomb-service-center/server/init"
 
-	_ "github.com/apache/servicecomb-service-center/server/bootstrap"
+	"github.com/go-chassis/go-archaius"
 
 	"github.com/apache/servicecomb-service-center/datasource"
 	"github.com/apache/servicecomb-service-center/server/core"
 	"github.com/apache/servicecomb-service-center/server/service"
-	"github.com/go-chassis/go-archaius"
 )
 
 func init() {

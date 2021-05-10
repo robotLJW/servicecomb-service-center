@@ -25,6 +25,8 @@ import (
 	"strings"
 	"time"
 
+	pb "github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/datasource"
 	"github.com/apache/servicecomb-service-center/datasource/etcd/path"
 	serviceUtil "github.com/apache/servicecomb-service-center/datasource/etcd/util"
@@ -33,7 +35,6 @@ import (
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/server/core"
-	pb "github.com/go-chassis/cari/discovery"
 )
 
 func (ds *DataSource) SelfRegister(ctx context.Context) error {

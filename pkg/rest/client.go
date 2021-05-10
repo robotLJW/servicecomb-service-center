@@ -18,6 +18,7 @@ package rest
 import (
 	"bytes"
 	"compress/gzip"
+	"context"
 	"crypto/tls"
 	"fmt"
 	"io"
@@ -29,13 +30,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/apache/servicecomb-service-center/pkg/log"
-
 	"github.com/apache/servicecomb-service-center/pkg/buffer"
+	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/tlsutil"
 	"github.com/apache/servicecomb-service-center/pkg/util"
-
-	"context"
 )
 
 var defaultURLClientOption = URLClientOption{

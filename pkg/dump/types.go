@@ -16,9 +16,10 @@
 package dump
 
 import (
+	"github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/pkg/cluster"
 	"github.com/apache/servicecomb-service-center/server/alarm/model"
-	"github.com/go-chassis/cari/discovery"
 )
 
 type AlarmListRequest struct {

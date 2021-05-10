@@ -20,10 +20,11 @@ package service
 import (
 	"regexp"
 
+	"github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/pkg/validate"
 	"github.com/apache/servicecomb-service-center/server/plugin/quota"
-	"github.com/go-chassis/cari/discovery"
 )
 
 var (

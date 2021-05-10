@@ -18,8 +18,9 @@
 package rbac
 
 import (
-	"github.com/apache/servicecomb-service-center/pkg/rbacframe"
 	"github.com/go-chassis/cari/rbac"
+
+	"github.com/apache/servicecomb-service-center/pkg/rbacframe"
 )
 
 // method to verbs

@@ -18,8 +18,9 @@
 package storage
 
 import (
-	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/coreos/etcd/clientv3"
+
+	"github.com/apache/servicecomb-service-center/pkg/util"
 )
 
 var (

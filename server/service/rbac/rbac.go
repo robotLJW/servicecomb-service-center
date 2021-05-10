@@ -21,8 +21,12 @@ import (
 	"context"
 	"crypto/rsa"
 	"errors"
-	"github.com/go-chassis/cari/rbac"
 	"io/ioutil"
+
+	"github.com/go-chassis/cari/rbac"
+	"github.com/go-chassis/go-archaius"
+	"github.com/go-chassis/go-chassis/v2/security/authr"
+	"github.com/go-chassis/go-chassis/v2/security/secret"
 
 	"github.com/apache/servicecomb-service-center/datasource"
 	"github.com/apache/servicecomb-service-center/pkg/log"
@@ -31,9 +35,6 @@ import (
 	"github.com/apache/servicecomb-service-center/server/plugin/security/cipher"
 	"github.com/apache/servicecomb-service-center/server/service"
 	"github.com/apache/servicecomb-service-center/server/service/rbac/dao"
-	"github.com/go-chassis/go-archaius"
-	"github.com/go-chassis/go-chassis/v2/security/authr"
-	"github.com/go-chassis/go-chassis/v2/security/secret"
 )
 
 const (

@@ -17,12 +17,13 @@
 package service_test
 
 import (
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+
 	"strconv"
 
 	pb "github.com/go-chassis/cari/discovery"
 	"github.com/go-chassis/go-archaius"
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
 
 	"github.com/apache/servicecomb-service-center/datasource/etcd/client"
 	"github.com/apache/servicecomb-service-center/datasource/etcd/event"

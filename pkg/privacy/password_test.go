@@ -18,9 +18,11 @@
 package privacy_test
 
 import (
-	"github.com/apache/servicecomb-service-center/pkg/privacy"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+
+	"github.com/apache/servicecomb-service-center/pkg/privacy"
 )
 
 func TestHashPassword(t *testing.T) {

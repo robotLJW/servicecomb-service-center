@@ -19,9 +19,9 @@ package datasource_test
 
 import (
 	"context"
-	"github.com/go-chassis/cari/rbac"
 	"testing"
 
+	"github.com/go-chassis/cari/rbac"
 	"github.com/stretchr/testify/assert"
 
 	"github.com/apache/servicecomb-service-center/datasource"

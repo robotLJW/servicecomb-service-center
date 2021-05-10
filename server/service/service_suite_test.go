@@ -18,19 +18,18 @@ package service_test
 
 // initialize
 import (
+	_ "github.com/apache/servicecomb-service-center/test"
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+
 	"context"
+	"testing"
+
+	"github.com/onsi/ginkgo/reporters"
 
 	"github.com/apache/servicecomb-service-center/pkg/proto"
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/server/service"
-	_ "github.com/apache/servicecomb-service-center/test"
-
-	. "github.com/onsi/ginkgo"
-	"github.com/onsi/ginkgo/reporters"
-
-	"testing"
-
-	. "github.com/onsi/gomega"
 )
 
 var serviceResource proto.ServiceCtrlServer

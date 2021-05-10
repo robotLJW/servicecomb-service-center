@@ -22,10 +22,11 @@ import (
 	"crypto/tls"
 	"sync"
 
+	ggrpc "google.golang.org/grpc"
+
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/syncer/grpc"
 	pb "github.com/apache/servicecomb-service-center/syncer/proto"
-	ggrpc "google.golang.org/grpc"
 )
 
 var (

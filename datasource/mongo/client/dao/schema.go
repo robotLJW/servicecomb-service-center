@@ -19,10 +19,12 @@ package dao
 
 import (
 	"context"
+
+	"github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/datasource/mongo/client"
 	"github.com/apache/servicecomb-service-center/datasource/mongo/client/model"
 	mutil "github.com/apache/servicecomb-service-center/datasource/mongo/util"
-	"github.com/go-chassis/cari/discovery"
 )
 
 func GetSchema(ctx context.Context, filter interface{}) (*model.Schema, error) {

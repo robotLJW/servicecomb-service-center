@@ -21,8 +21,9 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/apache/servicecomb-service-center/pkg/buffer"
 	dto "github.com/prometheus/client_model/go"
+
+	"github.com/apache/servicecomb-service-center/pkg/buffer"
 )
 
 // Pxx represents p99 p90 p50

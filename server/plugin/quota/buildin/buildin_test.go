@@ -16,18 +16,19 @@
 package buildin_test
 
 import (
-	"context"
-	"github.com/apache/servicecomb-service-center/pkg/util"
-
-	"github.com/apache/servicecomb-service-center/datasource"
+	_ "github.com/apache/servicecomb-service-center/server/bootstrap"
 	_ "github.com/apache/servicecomb-service-center/server/init"
 
-	_ "github.com/apache/servicecomb-service-center/server/bootstrap"
-	"github.com/apache/servicecomb-service-center/server/plugin/quota"
+	"context"
+	"testing"
+
 	pb "github.com/go-chassis/cari/discovery"
 	"github.com/go-chassis/go-archaius"
 	"github.com/stretchr/testify/assert"
-	"testing"
+
+	"github.com/apache/servicecomb-service-center/datasource"
+	"github.com/apache/servicecomb-service-center/pkg/util"
+	"github.com/apache/servicecomb-service-center/server/plugin/quota"
 )
 
 func init() {

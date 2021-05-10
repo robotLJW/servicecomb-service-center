@@ -24,10 +24,11 @@ import (
 	"net/http"
 	"syscall"
 
+	"gopkg.in/yaml.v2"
+
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/syncer/pkg/syssig"
 	"github.com/apache/servicecomb-service-center/syncer/samples/multi-servicecenters/servicecenter/hello-server/servicecenter"
-	"gopkg.in/yaml.v2"
 )
 
 func main() {

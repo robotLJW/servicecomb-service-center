@@ -23,12 +23,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/apache/servicecomb-service-center/server/config"
-
 	"github.com/apache/servicecomb-service-center/pkg/chain"
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/rest"
 	"github.com/apache/servicecomb-service-center/pkg/util"
+	"github.com/apache/servicecomb-service-center/server/config"
 )
 
 // Handler implements chain.Handler

@@ -18,9 +18,10 @@
 package command
 
 import (
+	"github.com/urfave/cli"
+
 	"github.com/apache/servicecomb-service-center/server/config"
 	"github.com/apache/servicecomb-service-center/version"
-	"github.com/urfave/cli"
 )
 
 // ParseConfig from cli

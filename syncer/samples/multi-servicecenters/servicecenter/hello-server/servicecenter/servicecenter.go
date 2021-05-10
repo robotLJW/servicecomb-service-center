@@ -25,10 +25,11 @@ import (
 	"sync"
 	"time"
 
+	"github.com/go-chassis/cari/discovery"
+
 	client2 "github.com/apache/servicecomb-service-center/client"
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/syncer/pkg/ticker"
-	"github.com/go-chassis/cari/discovery"
 )
 
 var (

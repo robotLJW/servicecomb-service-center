@@ -19,16 +19,18 @@ package datasource_test
 
 import (
 	"context"
+	"strconv"
+	"strings"
+	"testing"
+
+	pb "github.com/go-chassis/cari/discovery"
+	"github.com/stretchr/testify/assert"
+
 	"github.com/apache/servicecomb-service-center/datasource"
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/server/config"
 	"github.com/apache/servicecomb-service-center/server/core"
-	pb "github.com/go-chassis/cari/discovery"
-	"github.com/stretchr/testify/assert"
-	"strconv"
-	"strings"
-	"testing"
 )
 
 func TestInstance_Create(t *testing.T) {

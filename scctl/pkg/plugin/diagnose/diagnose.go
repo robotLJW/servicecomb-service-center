@@ -20,13 +20,14 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/coreos/etcd/clientv3"
+	"github.com/coreos/etcd/mvcc/mvccpb"
+	"github.com/spf13/cobra"
+
 	"github.com/apache/servicecomb-service-center/client"
 	"github.com/apache/servicecomb-service-center/pkg/dump"
 	"github.com/apache/servicecomb-service-center/scctl/etcd"
 	"github.com/apache/servicecomb-service-center/scctl/pkg/cmd"
-	"github.com/coreos/etcd/clientv3"
-	"github.com/coreos/etcd/mvcc/mvccpb"
-	"github.com/spf13/cobra"
 )
 
 const (

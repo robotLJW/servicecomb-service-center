@@ -28,6 +28,8 @@ import (
 	"strings"
 	"time"
 
+	pb "github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/datasource"
 	"github.com/apache/servicecomb-service-center/datasource/etcd/client"
 	serviceUtil "github.com/apache/servicecomb-service-center/datasource/etcd/util"
@@ -35,7 +37,6 @@ import (
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/server/broker/brokerpb"
 	apt "github.com/apache/servicecomb-service-center/server/core"
-	pb "github.com/go-chassis/cari/discovery"
 )
 
 var ServiceAPI = &Service{}

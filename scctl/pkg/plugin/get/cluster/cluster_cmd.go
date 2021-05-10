@@ -18,11 +18,12 @@ package cluster
 import (
 	"context"
 
+	"github.com/spf13/cobra"
+
 	"github.com/apache/servicecomb-service-center/client"
 	"github.com/apache/servicecomb-service-center/scctl/pkg/cmd"
 	"github.com/apache/servicecomb-service-center/scctl/pkg/plugin/get"
 	"github.com/apache/servicecomb-service-center/scctl/pkg/writer"
-	"github.com/spf13/cobra"
 )
 
 func init() {

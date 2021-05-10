@@ -24,9 +24,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/hashicorp/serf/serf"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/apache/servicecomb-service-center/pkg/log"
 )
 
 func TestSerfServer(t *testing.T) {

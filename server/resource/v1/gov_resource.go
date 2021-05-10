@@ -22,13 +22,14 @@ import (
 	"io/ioutil"
 	"net/http"
 
+	"github.com/go-chassis/cari/discovery"
+
 	model "github.com/apache/servicecomb-service-center/pkg/gov"
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/rest"
 	"github.com/apache/servicecomb-service-center/server/rest/controller"
 	"github.com/apache/servicecomb-service-center/server/service/gov"
 	"github.com/apache/servicecomb-service-center/server/service/gov/kie"
-	"github.com/go-chassis/cari/discovery"
 )
 
 type Governance struct {

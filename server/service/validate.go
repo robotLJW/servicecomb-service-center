@@ -22,10 +22,11 @@ import (
 	"reflect"
 	"regexp"
 
-	"github.com/apache/servicecomb-service-center/pkg/log"
-	"github.com/apache/servicecomb-service-center/pkg/validate"
 	pb "github.com/go-chassis/cari/discovery"
 	"github.com/go-chassis/cari/rbac"
+
+	"github.com/apache/servicecomb-service-center/pkg/log"
+	"github.com/apache/servicecomb-service-center/pkg/validate"
 )
 
 var createAccountValidator = &validate.Validator{}

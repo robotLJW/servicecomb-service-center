@@ -24,9 +24,9 @@ import (
 	"testing"
 
 	"github.com/go-chassis/cari/rbac"
+	"github.com/stretchr/testify/assert"
 
 	"github.com/apache/servicecomb-service-center/datasource"
-	"github.com/stretchr/testify/assert"
 )
 
 var (

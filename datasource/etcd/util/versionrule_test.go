@@ -22,9 +22,10 @@ import (
 	"sort"
 	"testing"
 
+	"github.com/stretchr/testify/assert"
+
 	sd "github.com/apache/servicecomb-service-center/datasource/etcd/sd"
 	"github.com/apache/servicecomb-service-center/pkg/log"
-	"github.com/stretchr/testify/assert"
 )
 
 const VERSIONRULE_BASE = 5000

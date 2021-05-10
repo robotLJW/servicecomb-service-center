@@ -24,13 +24,14 @@ import (
 	"testing"
 	"time"
 
+	pb "github.com/go-chassis/cari/discovery"
+	"github.com/stretchr/testify/assert"
+
 	"github.com/apache/servicecomb-service-center/datasource"
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/server/plugin/quota"
 	"github.com/apache/servicecomb-service-center/server/service"
-	pb "github.com/go-chassis/cari/discovery"
-	"github.com/stretchr/testify/assert"
 )
 
 func TestService_Register(t *testing.T) {

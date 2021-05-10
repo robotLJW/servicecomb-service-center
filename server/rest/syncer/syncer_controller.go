@@ -20,9 +20,8 @@ package syncer
 import (
 	"net/http"
 
-	"github.com/apache/servicecomb-service-center/server/rest/syncer/service"
-
 	"github.com/apache/servicecomb-service-center/pkg/rest"
+	"github.com/apache/servicecomb-service-center/server/rest/syncer/service"
 )
 
 // Syncer 有关的接口

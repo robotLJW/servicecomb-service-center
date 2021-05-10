@@ -27,10 +27,10 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/NYTimes/gziphandler"
+
 	"github.com/apache/servicecomb-service-center/pkg/grace"
 	"github.com/apache/servicecomb-service-center/pkg/log"
-
-	"github.com/NYTimes/gziphandler"
 )
 
 const (

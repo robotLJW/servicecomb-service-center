@@ -1,11 +1,12 @@
 package servicecenter
 
 import (
-	pbsc "github.com/apache/servicecomb-service-center/syncer/proto/sc"
+	"testing"
+
 	scpb "github.com/go-chassis/cari/discovery"
 	"github.com/stretchr/testify/assert"
 
-	"testing"
+	pbsc "github.com/apache/servicecomb-service-center/syncer/proto/sc"
 )
 
 func TestTransform_ServiceCopy(t *testing.T) {

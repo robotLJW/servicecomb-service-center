@@ -23,10 +23,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/apache/servicecomb-service-center/pkg/log"
-	"github.com/apache/servicecomb-service-center/syncer/pkg/utils"
 	"github.com/hashicorp/serf/serf"
 	"github.com/pkg/errors"
+
+	"github.com/apache/servicecomb-service-center/pkg/log"
+	"github.com/apache/servicecomb-service-center/syncer/pkg/utils"
 )
 
 // HandleFunc handle user event

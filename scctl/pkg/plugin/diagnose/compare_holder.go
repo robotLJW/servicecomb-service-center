@@ -19,11 +19,12 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/coreos/etcd/mvcc/mvccpb"
+	pb "github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/datasource/etcd/value"
 	"github.com/apache/servicecomb-service-center/pkg/dump"
 	"github.com/apache/servicecomb-service-center/pkg/gopool"
-	"github.com/coreos/etcd/mvcc/mvccpb"
-	pb "github.com/go-chassis/cari/discovery"
 )
 
 type CompareHolder interface {

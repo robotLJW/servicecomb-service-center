@@ -18,12 +18,13 @@
 package heartbeat_test
 
 import (
+	_ "github.com/apache/servicecomb-service-center/datasource/mongo/heartbeat/checker"
+
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 
 	"github.com/apache/servicecomb-service-center/datasource/mongo/heartbeat"
-	_ "github.com/apache/servicecomb-service-center/datasource/mongo/heartbeat/checker"
 )
 
 func TestInit(t *testing.T) {

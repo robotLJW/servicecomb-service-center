@@ -20,10 +20,11 @@ package datasource_test
 import (
 	"testing"
 
-	"github.com/apache/servicecomb-service-center/datasource"
-	"github.com/apache/servicecomb-service-center/datasource/mongo/sd"
 	pb "github.com/go-chassis/cari/discovery"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/apache/servicecomb-service-center/datasource"
+	"github.com/apache/servicecomb-service-center/datasource/mongo/sd"
 )
 
 func TestDumpCache(t *testing.T) {

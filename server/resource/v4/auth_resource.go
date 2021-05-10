@@ -23,7 +23,9 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	rbacsvc "github.com/apache/servicecomb-service-center/server/service/rbac"
+	"github.com/go-chassis/cari/discovery"
+	"github.com/go-chassis/cari/rbac"
+	"github.com/go-chassis/go-chassis/v2/security/authr"
 
 	"github.com/apache/servicecomb-service-center/datasource"
 	errorsEx "github.com/apache/servicecomb-service-center/pkg/errors"
@@ -32,10 +34,8 @@ import (
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/server/rest/controller"
 	"github.com/apache/servicecomb-service-center/server/service"
+	rbacsvc "github.com/apache/servicecomb-service-center/server/service/rbac"
 	"github.com/apache/servicecomb-service-center/server/service/rbac/dao"
-	"github.com/go-chassis/cari/discovery"
-	"github.com/go-chassis/cari/rbac"
-	"github.com/go-chassis/go-chassis/v2/security/authr"
 )
 
 type AuthResource struct {

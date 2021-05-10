@@ -20,10 +20,11 @@ package etcd
 import (
 	"net/url"
 
-	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/coreos/etcd/compactor"
 	"github.com/coreos/etcd/embed"
 	"github.com/coreos/etcd/etcdserver"
+
+	"github.com/apache/servicecomb-service-center/pkg/log"
 )
 
 type config struct {

@@ -20,11 +20,12 @@ package v4
 import (
 	"net/http"
 
+	pb "github.com/go-chassis/cari/discovery"
+	"github.com/gorilla/websocket"
+
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/rest"
 	"github.com/apache/servicecomb-service-center/server/core"
-	pb "github.com/go-chassis/cari/discovery"
-	"github.com/gorilla/websocket"
 )
 
 type WatchService struct {

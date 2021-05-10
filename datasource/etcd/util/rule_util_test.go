@@ -18,16 +18,18 @@
 package util_test
 
 import (
+	. "github.com/apache/servicecomb-service-center/datasource/etcd/util"
+
 	"context"
 	"errors"
-	"github.com/stretchr/testify/assert"
 	"net/http"
 	"testing"
 
-	"github.com/apache/servicecomb-service-center/datasource"
-	. "github.com/apache/servicecomb-service-center/datasource/etcd/util"
-	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/go-chassis/cari/discovery"
+	"github.com/stretchr/testify/assert"
+
+	"github.com/apache/servicecomb-service-center/datasource"
+	"github.com/apache/servicecomb-service-center/pkg/util"
 )
 
 func TestRuleFilter_Filter(t *testing.T) {

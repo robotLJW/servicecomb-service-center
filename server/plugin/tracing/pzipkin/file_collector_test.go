@@ -23,8 +23,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/apache/servicecomb-service-center/pkg/gopool"
 	"github.com/openzipkin/zipkin-go-opentracing/thrift/gen-go/zipkincore"
+
+	"github.com/apache/servicecomb-service-center/pkg/gopool"
 )
 
 func TestFileCollector_Collect(t *testing.T) {

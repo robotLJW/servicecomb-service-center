@@ -24,9 +24,10 @@ import (
 	"text/tabwriter"
 	"text/template"
 
-	"github.com/apache/servicecomb-service-center/scctl/pkg/version"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
+
+	"github.com/apache/servicecomb-service-center/scctl/pkg/version"
 )
 
 var (

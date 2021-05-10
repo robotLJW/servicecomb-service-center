@@ -23,7 +23,6 @@ import (
 	"strings"
 
 	"github.com/apache/servicecomb-service-center/pkg/log"
-	"github.com/apache/servicecomb-service-center/pkg/util"
 )
 
 func ParseSSLCipherSuites(ciphers string, permitTLSCipherSuiteMap map[string]uint16) []uint16 {
@@ -94,23 +93,6 @@ func LoadTLSCertificate(certFile, keyFile, plainPassphase string) (tlsCert []tls
 	if keyBlock == nil {
 		log.Errorf(err, "decode key file %s failed.", keyFile)
 		return nil, err
-	}
-
-	if x509.IsEncryptedPEMBlock(keyBlock) {
-		plainPassphaseBytes := util.StringToBytesWithNoCopy(plainPassphase)
-		keyData, err := x509.DecryptPEMBlock(keyBlock, plainPassphaseBytes)
-		if err != nil {
-			log.Errorf(err, "decrypt key file %s failed.", keyFile)
-			return nil, err
-		}
-
-		// 解密成功，重新编码为PEM格式的文件
-		plainKeyBlock := &pem.Block{
-			Type:  "RSA PRIVATE KEY",
-			Bytes: keyData,
-		}
-
-		keyContent = pem.EncodeToMemory(plainKeyBlock)
 	}
 
 	cert, err := tls.X509KeyPair(certContent, keyContent)

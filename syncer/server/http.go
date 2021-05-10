@@ -22,9 +22,10 @@ package server
 import (
 	"net/http"
 
-	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/go-chassis/go-chassis/v2"
 	rf "github.com/go-chassis/go-chassis/v2/server/restful"
+
+	"github.com/apache/servicecomb-service-center/pkg/log"
 )
 
 const (

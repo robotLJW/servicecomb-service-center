@@ -19,8 +19,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/apache/servicecomb-service-center/server/config"
 	"github.com/go-chassis/cari/discovery"
+
+	"github.com/apache/servicecomb-service-center/server/config"
 )
 
 func init() {

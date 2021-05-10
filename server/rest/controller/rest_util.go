@@ -23,11 +23,12 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/rest"
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/server/alarm"
-	"github.com/go-chassis/cari/discovery"
 )
 
 func WriteError(w http.ResponseWriter, code int32, detail string) {

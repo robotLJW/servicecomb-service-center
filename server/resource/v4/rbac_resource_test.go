@@ -18,6 +18,8 @@
 package v4_test
 
 import (
+	_ "github.com/apache/servicecomb-service-center/test"
+
 	"bytes"
 	"context"
 	"encoding/json"
@@ -27,19 +29,18 @@ import (
 	"testing"
 	"time"
 
+	"github.com/astaxie/beego"
 	rbacmodel "github.com/go-chassis/cari/rbac"
+	"github.com/go-chassis/go-archaius"
+	"github.com/go-chassis/go-chassis/v2/security/secret"
+	"github.com/go-chassis/go-chassis/v2/server/restful"
+	"github.com/stretchr/testify/assert"
 
 	"github.com/apache/servicecomb-service-center/pkg/rest"
 	"github.com/apache/servicecomb-service-center/server/config"
 	v4 "github.com/apache/servicecomb-service-center/server/resource/v4"
 	"github.com/apache/servicecomb-service-center/server/service/rbac"
 	"github.com/apache/servicecomb-service-center/server/service/rbac/dao"
-	_ "github.com/apache/servicecomb-service-center/test"
-	"github.com/astaxie/beego"
-	"github.com/go-chassis/go-archaius"
-	"github.com/go-chassis/go-chassis/v2/security/secret"
-	"github.com/go-chassis/go-chassis/v2/server/restful"
-	"github.com/stretchr/testify/assert"
 )
 
 var pwd = "Complicated_password1"

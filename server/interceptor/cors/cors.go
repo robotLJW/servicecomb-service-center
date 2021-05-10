@@ -21,8 +21,9 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/rs/cors"
+
+	"github.com/apache/servicecomb-service-center/pkg/log"
 )
 
 var CORS *cors.Cors

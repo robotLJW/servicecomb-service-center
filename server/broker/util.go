@@ -27,13 +27,14 @@ import (
 	"strconv"
 	"strings"
 
+	pb "github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/datasource"
 	"github.com/apache/servicecomb-service-center/datasource/etcd/client"
 	serviceUtil "github.com/apache/servicecomb-service-center/datasource/etcd/util"
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/server/broker/brokerpb"
-	pb "github.com/go-chassis/cari/discovery"
 )
 
 var PactLogger *log.Logger

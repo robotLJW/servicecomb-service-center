@@ -22,8 +22,9 @@ import (
 	"errors"
 	"os"
 
-	"github.com/apache/servicecomb-service-center/syncer/etcd"
 	"github.com/coreos/etcd/clientv3"
+
+	"github.com/apache/servicecomb-service-center/syncer/etcd"
 )
 
 const (

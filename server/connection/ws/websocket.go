@@ -23,14 +23,15 @@ import (
 	"fmt"
 	"time"
 
+	pb "github.com/go-chassis/cari/discovery"
+	"github.com/gorilla/websocket"
+
 	"github.com/apache/servicecomb-service-center/datasource"
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/server/connection"
 	"github.com/apache/servicecomb-service-center/server/metrics"
 	"github.com/apache/servicecomb-service-center/server/notify"
-	pb "github.com/go-chassis/cari/discovery"
-	"github.com/gorilla/websocket"
 )
 
 const Websocket = "Websocket"

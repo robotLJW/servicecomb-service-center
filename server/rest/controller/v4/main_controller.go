@@ -22,11 +22,12 @@ import (
 	"net/http"
 	"sync"
 
+	pb "github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/pkg/rest"
 	"github.com/apache/servicecomb-service-center/server/core"
 	"github.com/apache/servicecomb-service-center/server/rest/controller"
 	"github.com/apache/servicecomb-service-center/version"
-	pb "github.com/go-chassis/cari/discovery"
 )
 
 var (

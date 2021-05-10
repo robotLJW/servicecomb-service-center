@@ -17,16 +17,18 @@
 package govern_test
 
 import (
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+
 	"bytes"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 
+	pb "github.com/go-chassis/cari/discovery"
+
 	"github.com/apache/servicecomb-service-center/server/core"
 	"github.com/apache/servicecomb-service-center/server/rest/govern"
-	pb "github.com/go-chassis/cari/discovery"
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
 )
 
 type mockGovernHandler struct {

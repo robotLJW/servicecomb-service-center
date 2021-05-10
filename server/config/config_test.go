@@ -23,10 +23,11 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/apache/servicecomb-service-center/pkg/util"
-	"github.com/apache/servicecomb-service-center/server/config"
 	"github.com/go-chassis/go-archaius"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/apache/servicecomb-service-center/pkg/util"
+	"github.com/apache/servicecomb-service-center/server/config"
 )
 
 func TestInit(t *testing.T) {

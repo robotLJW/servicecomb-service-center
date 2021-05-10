@@ -18,9 +18,10 @@
 package metrics
 
 import (
-	helper "github.com/apache/servicecomb-service-center/pkg/prometheus"
 	"github.com/prometheus/client_golang/prometheus"
 	dto "github.com/prometheus/client_model/go"
+
+	helper "github.com/apache/servicecomb-service-center/pkg/prometheus"
 )
 
 // keys of gauge

@@ -20,6 +20,9 @@ package admin
 import (
 	"context"
 
+	"github.com/go-chassis/cari/discovery"
+	"github.com/go-chassis/go-archaius"
+
 	"github.com/apache/servicecomb-service-center/datasource"
 	"github.com/apache/servicecomb-service-center/pkg/dump"
 	"github.com/apache/servicecomb-service-center/pkg/log"
@@ -27,8 +30,6 @@ import (
 	"github.com/apache/servicecomb-service-center/server/alarm"
 	"github.com/apache/servicecomb-service-center/server/core"
 	"github.com/apache/servicecomb-service-center/version"
-	"github.com/go-chassis/cari/discovery"
-	"github.com/go-chassis/go-archaius"
 )
 
 var (

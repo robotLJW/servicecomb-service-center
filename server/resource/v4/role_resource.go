@@ -20,9 +20,11 @@ package v4
 import (
 	"context"
 	"encoding/json"
-	"github.com/go-chassis/cari/rbac"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/go-chassis/cari/discovery"
+	"github.com/go-chassis/cari/rbac"
 
 	"github.com/apache/servicecomb-service-center/datasource"
 	errorsEx "github.com/apache/servicecomb-service-center/pkg/errors"
@@ -30,7 +32,6 @@ import (
 	"github.com/apache/servicecomb-service-center/pkg/rest"
 	"github.com/apache/servicecomb-service-center/server/rest/controller"
 	"github.com/apache/servicecomb-service-center/server/service/rbac/dao"
-	"github.com/go-chassis/cari/discovery"
 )
 
 var ErrConflictRole int32 = 409002

@@ -29,10 +29,11 @@ import (
 	"sync"
 	"time"
 
+	"github.com/gorilla/websocket"
+
 	"github.com/apache/servicecomb-service-center/pkg/dump"
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/server/alarm"
-	"github.com/gorilla/websocket"
 )
 
 const watchInstanceURL = "v4/syncer/watch"

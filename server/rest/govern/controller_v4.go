@@ -19,15 +19,15 @@ package govern
 
 import (
 	"net/http"
-
 	"strings"
+
+	pb "github.com/go-chassis/cari/discovery"
 
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/rest"
 	"github.com/apache/servicecomb-service-center/pkg/util"
 	"github.com/apache/servicecomb-service-center/server/core"
 	"github.com/apache/servicecomb-service-center/server/rest/controller"
-	pb "github.com/go-chassis/cari/discovery"
 )
 
 // Service 治理相关接口服务

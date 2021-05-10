@@ -19,14 +19,14 @@ package rbac
 
 import (
 	"context"
-	"github.com/apache/servicecomb-service-center/pkg/privacy"
-	"github.com/apache/servicecomb-service-center/pkg/rbacframe"
-	rbacmodel "github.com/go-chassis/cari/rbac"
 
+	rbacmodel "github.com/go-chassis/cari/rbac"
 	"github.com/go-chassis/foundation/stringutil"
 	"golang.org/x/crypto/bcrypt"
 
 	"github.com/apache/servicecomb-service-center/pkg/log"
+	"github.com/apache/servicecomb-service-center/pkg/privacy"
+	"github.com/apache/servicecomb-service-center/pkg/rbacframe"
 	"github.com/apache/servicecomb-service-center/server/service/rbac/dao"
 )
 

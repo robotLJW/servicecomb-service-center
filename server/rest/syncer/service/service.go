@@ -21,9 +21,10 @@ import (
 	"context"
 	"net/http"
 
+	"github.com/gorilla/websocket"
+
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/server/syncernotify"
-	"github.com/gorilla/websocket"
 )
 
 var (

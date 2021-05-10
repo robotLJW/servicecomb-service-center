@@ -28,10 +28,11 @@ import (
 	"strings"
 	"time"
 
+	"github.com/pkg/errors"
+
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/pkg/tlsutil"
 	"github.com/apache/servicecomb-service-center/syncer/pkg/utils"
-	"github.com/pkg/errors"
 )
 
 // Verify Provide config verification

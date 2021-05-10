@@ -19,6 +19,8 @@ import (
 	"context"
 	"strings"
 
+	"github.com/spf13/cobra"
+
 	"github.com/apache/servicecomb-service-center/client"
 	"github.com/apache/servicecomb-service-center/datasource/etcd/path"
 	"github.com/apache/servicecomb-service-center/pkg/dump"
@@ -26,7 +28,6 @@ import (
 	"github.com/apache/servicecomb-service-center/scctl/pkg/model"
 	"github.com/apache/servicecomb-service-center/scctl/pkg/plugin/get"
 	"github.com/apache/servicecomb-service-center/scctl/pkg/writer"
-	"github.com/spf13/cobra"
 )
 
 func init() {

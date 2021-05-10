@@ -18,9 +18,10 @@ package diagnose
 import (
 	"testing"
 
-	"github.com/apache/servicecomb-service-center/pkg/dump"
 	"github.com/coreos/etcd/mvcc/mvccpb"
 	"github.com/go-chassis/cari/discovery"
+
+	"github.com/apache/servicecomb-service-center/pkg/dump"
 )
 
 func TestAbstractCompareHolder_Compare(t *testing.T) {

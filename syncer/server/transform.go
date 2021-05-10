@@ -24,14 +24,15 @@ import (
 	"strconv"
 	"strings"
 
+	scpb "github.com/go-chassis/cari/discovery"
+	"google.golang.org/protobuf/proto"
+
 	sc "github.com/apache/servicecomb-service-center/client"
 	"github.com/apache/servicecomb-service-center/pkg/dump"
 	"github.com/apache/servicecomb-service-center/pkg/log"
 	"github.com/apache/servicecomb-service-center/syncer/plugins"
 	"github.com/apache/servicecomb-service-center/syncer/plugins/servicecenter"
 	pb "github.com/apache/servicecomb-service-center/syncer/proto"
-	scpb "github.com/go-chassis/cari/discovery"
-	"google.golang.org/protobuf/proto"
 )
 
 const (

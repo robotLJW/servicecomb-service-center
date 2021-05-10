@@ -17,10 +17,10 @@
 package plugin
 
 import (
-	"github.com/apache/servicecomb-service-center/pkg/plugin"
 	"net/http"
 	"testing"
 
+	"github.com/apache/servicecomb-service-center/pkg/plugin"
 	"github.com/apache/servicecomb-service-center/server/config"
 	"github.com/apache/servicecomb-service-center/server/plugin/auth"
 )

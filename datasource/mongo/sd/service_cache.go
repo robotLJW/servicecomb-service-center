@@ -20,15 +20,16 @@ package sd
 import (
 	"strings"
 
+	"go.mongodb.org/mongo-driver/bson"
+
 	"github.com/apache/servicecomb-service-center/datasource/mongo/client/model"
 	"github.com/apache/servicecomb-service-center/datasource/sdcommon"
-	"go.mongodb.org/mongo-driver/bson"
 )
 
 type serviceStore struct {
 	dirty      bool
 	docCache   *DocStore
-	indexCache *indexCache
+	indexCache *IndexCache
 }
 
 func init() {
